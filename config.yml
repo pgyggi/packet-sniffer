@@ -1,0 +1,20 @@
+output:
+   file:
+     path: "/opt/packetbeat/data/"
+     filename: position.data
+     rotate_every_kb: 10240  # = 100MB
+     number_of_files: 10
+logging:
+  to_files: true
+  files:
+    path: ./logs
+    name: agent_log
+    rotateeverybytes: 10485760 # = 10MB
+    keepfiles: 5
+  level: info
+shipper:
+  name: deta
+  queue_size: 10000
+#  geoip:
+#    paths:
+#      - "./GeoLiteCity.dat"
